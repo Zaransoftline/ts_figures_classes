@@ -18,11 +18,17 @@ export class Triangle implements Figure {
     this.shape = 'triangle';
 
     if (a <= 0 || b <= 0 || c <= 0) {
-      throw new Error('One or more of the sides is equal to 0');
+      throw new Error(
+        'All sides of a triangle must have positive lengths. ' +
+          'Side lengths must be greater than 0.',
+      );
     }
 
     if (a + b <= c || b + c <= a || c + a <= b) {
-      throw new Error('A triangle with these sides is not valid');
+      throw new Error(
+        'A triangle with these sides is not valid. ' +
+          'The sum of any two sides must be greater than the third side.',
+      );
     }
   }
 
@@ -43,7 +49,9 @@ export class Circle implements Figure {
     this.shape = 'circle';
 
     if (radius <= 0) {
-      throw new Error('Radius cannot be 0');
+      throw new Error(
+        'The radius of a circle must be a positive number greater than 0.',
+      );
     }
   }
 
@@ -62,7 +70,10 @@ export class Rectangle implements Figure {
     this.shape = 'rectangle';
 
     if (this.width <= 0 || this.height <= 0) {
-      throw new Error('Width or height of a rectangle cannot be 0');
+      throw new Error(
+        'Width and height of a rectangle must be' +
+          ' positive numbers greater than 0.',
+      );
     }
   }
 
